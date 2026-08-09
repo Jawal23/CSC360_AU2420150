@@ -3,12 +3,18 @@
 
 ---
 
+### 📌 Session Metadata
 - **Course Code:** CSC360
 - **Course Name:** Computer Graphics and Image Processing
 - **Student ID:** AU2420150
 - **Session Number:** Session 01
 - **Date:** August 04, 2026
-- **Topic/Theme:** 
+- **Attendance Status:** Absent
 
 ---
+
+> [!NOTE]
+Absent for live session.
+
+
 
