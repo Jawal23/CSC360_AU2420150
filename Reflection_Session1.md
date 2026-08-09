@@ -3,7 +3,7 @@
 
 ---
 
-### 📌 Session Metadata
+### Session Metadata
 - **Course Code:** CSC360
 - **Course Name:** Computer Graphics and Image Processing
 - **Student ID:** AU2420150
