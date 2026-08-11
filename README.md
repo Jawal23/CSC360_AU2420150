@@ -27,6 +27,6 @@ In accordance with course guidelines, each entry synthesizes:
 
 | File | Lecture Topic | Date | Status |
 | :--- | :--- | :--- | :--- |
-| [Lecture1.md](file:///c:/Users/User/OneDrive/Documents/AU%20CSC360/CSC360_AU2420150/Reflection_Session1.md) | Introduction to Graphics Pipelines | 4 August 2026 | Complete |
-| Lecture2.md | Transformations & Vectors | 6 August 2026 | Complete |
+| [Lecture1.md](file:///c:/Users/User/OneDrive/Documents/AU%20CSC360/CSC360_AU2420150/Session%20Reflections/Reflection_Session1.md) | Introduction to Graphics Pipelines | 4 August 2026 | Complete |
+| [Lecture2.md](file:///c:/Users/User/OneDrive/Documents/AU%20CSC360/CSC360_AU2420150/Session%20Reflections/Reflection_Session2.md) | Getting Started & Vector Graphics | 7 August 2026 | Complete |
 | Lecture3.md | TBD | -- | In Progress |
