@@ -9,131 +9,284 @@
 - **Student ID:** AU2420150
 - **Session Number:** Session 02
 - **Session Date:** August 07, 2026
-- **Entry Date:** August 09, 2026
+- **Entry Date:** August 11, 2026
 
 ---
 
-## 1. Session Overview & Summary
+## 1. Overview
 
-The second session started with a recap of the introductory lecture, reinforcing the core distinctions between computer graphics (generating visual content from model data) and image processing (manipulating pre-existing visual data), alongside a quick review of Java-based graphical frameworks. This contextual refresher provided a smooth foundation before diving into shell mechanics and development workflows.
+Today's lecture moved beyond the graphics fundamentals covered in earlier sessions and introduced practical software-development concepts alongside core computer graphics topics.
 
-The narrative then transitioned into the world of Secure Shell (SSH) authentication. To appreciate why SSH matters, the professor established context by contrasting classic Windows command-line environments:
-- **Command Prompt (`cmd`):** The legacy Windows command interpreter with limited scripting capabilities.
-- **PowerShell:** A modern, object-oriented shell and scripting environment designed for system administration.
+The session focused on:
 
-This historical backdrop illustrated how command-line interfaces formed the backbone of computing prior to graphical user interfaces (GUIs). Understanding this environment made SSH far more intuitive—it serves as a cryptographic protocol designed to establish secure, encrypted shell sessions into remote machines over unsecured networks.
-
-```
-+-----------------------------------------------------------------------------------+
-|                                SSH Authentication                                 |
-+-----------------------------------------------------------------------------------+
-|  Local Machine (Client)                           Remote Host (e.g., GitHub)       |
-|  +---------------------+                          +----------------------------+  |
-|  | Private Key         |                          | Public Key                 |  |
-|  | (~/.ssh/id_ed25519) |                          | (Registered Padlock)       |  |
-|  | [STAYS PRIVATE]     |                          | [SHARED FREELY]            |  |
-|  +----------+----------+                          +-------------+--------------+  |
-|             |                                                   |                 |
-|             +----------------- Cryptographic -------------------+                 |
-|                               Handshake (No Secret Sent)                          |
-+-----------------------------------------------------------------------------------+
-```
-
-From authentication, the lecture shifted into fundamental graphics concepts, examining **Raster vs. Vector graphics** as the structural centerpiece of visual computing, and delineating **Static vs. Interactive graphics**:
-- **Static Graphics:** Visual output rendered once onto a frame buffer, remaining immutable unless redrawn explicitly.
-- **Interactive Graphics:** Dynamic visuals that continuously monitor user input events (mouse, keyboard, touch) to recalculate and update frames in real time.
+- **SSH (Secure Shell)** and its comparison with HTTPS
+- **SSH vs. HTTPS for Git repository access**
+- **Public and private key authentication**
+- **SSH KeyGen and Microsoft PowerShell**
+- **Static vs. interactive graphics**
+- **Vector vs. raster graphics**
+- The relationship between mathematical representations, secure development practices, and modern graphics workflows
 
 ---
 
-## 2. Code & Practical Implementation
+## 2. SSH (Secure Shell) vs. HTTPS
 
-Following the theoretical portion, a hands-on practice assignment was introduced to synthesize our tooling setup with early Java graphics programming:
+SSH and HTTPS are both protocols that enable secure communication, but they are designed for different primary purposes.
 
-### Practice Task Scope: Basic 2D Java Graphics & Git Integration
-- **Objective:** Construct a lightweight 2D rendering program using Java's standard graphics libraries while establishing a clean Git workflow (write code, commit changes, push to GitHub remote repository).
-- **Technical Mechanism:** 
-  - Subclassing a GUI component (such as `JPanel` or `JFrame`) and overriding its inherited `paint()` or `paintComponent(Graphics g)` lifecycle method.
-  - Casting the `Graphics` context object to `Graphics2D` to access enhanced rendering controls.
-  - Drawing fundamental 2D geometric primitives including straight lines, rectangles, ellipses, and basic paths.
+| Aspect | SSH | HTTPS |
+|---|---|---|
+| Full form | Secure Shell | Hypertext Transfer Protocol Secure |
+| Primary purpose | Secure remote access and command execution | Secure communication over the web |
+| Common development use | Remote servers and Git repositories | Websites, APIs, and Git repositories |
+| Authentication | Commonly uses key-based authentication | Commonly uses credentials or access tokens |
+| Typical interaction | Command-line/remote system access | Browser or web-based communication |
 
-This task marks our initial direct interaction with Java's low-level drawing API, serving primarily to build comfort with windowing lifecycle hooks and repository management.
+### Key Distinction
 
----
+**SSH** is primarily associated with securely accessing and controlling remote systems, while **HTTPS** is primarily associated with securely transferring information over the web.
 
-## 3. Deep-Dive Conceptual Understanding
-
-### Raster vs. Vector Graphics Mechanics
-
-The conceptual core of this session centered on how visual data is represented in computer memory:
-
-```
-+------------------------------------------------------------------------------------+
-|                             Visual Data Representation                             |
-+------------------------------------------------------------------------------------+
-|  Raster Graphics                                Vector Graphics                    |
-|  - Stored as a 2D grid of discrete pixels       - Stored as parametric formulas    |
-|  - Fixed spatial resolution (width x height)    - Resolution-independent primitives |
-|  - Scaling stretches individual pixel blocks     - Scaling recalculates equations  |
-|  - Ideal for rich photographic detail           - Ideal for typography & UI icons  |
-+------------------------------------------------------------------------------------+
-```
-
-- **Raster Graphics:** Image data is defined by a fixed rectangular matrix of color samples (pixels). Because the resolution is baked into the grid upon creation, increasing the display scale forces the rasterizer to stretch existing pixel samples—resulting in visible pixelation, aliasing artifacts, and blurriness.
-- **Vector Graphics:** Image data is represented parametrically as mathematical descriptions (points, vectors, lines, curves, and filled shapes). When scaling vector content, the rendering engine simply evaluates the underlying geometric equations against the target screen coordinates. Consequently, visual elements remain crisp and razor-sharp across all output devices, from minute web favicons to massive high-density displays.
+Both can also be used to access Git repositories, which makes understanding their differences particularly important in a development workflow.
 
 ---
 
-## 4. Technical Challenges & Areas for Growth
+## 3. SSH and HTTPS for Git Repositories
 
-### Unpacking the SSH Handshake & Key Management
+Git repositories can commonly be accessed through either **HTTPS** or **SSH**.
 
-While the high-level concept of public-private key cryptography was clear during class, several low-level mechanics warrant deeper investigation:
-1. **The Cryptographic Handshake:** Precisely how the server verifies that the client possesses the private key without the private key ever traveling across the wire (e.g., challenge-response mechanisms using asymmetric encryption).
-2. **Local Identity Resolution:** How the local terminal client locates the correct key file within `~/.ssh/` and pairs it to a specific remote host definition.
-3. **The Role of `ssh-agent`:** How background SSH agent daemons cache unencrypted private keys in memory so users don't need to enter passphrases repeatedly during active developer sessions.
+### HTTPS Authentication
 
-Further self-study on asymmetric cryptographic handshakes helped clarify these points, though articulating the full protocol end-to-end remains an area for continued review.
+When using HTTPS, authentication may require credentials such as:
 
----
+- Username and password
+- Personal Access Token (PAT)
 
-## 5. Inter-Session Connections & Conceptual Continuity
+Depending on the Git configuration and credential manager being used, authentication details may need to be provided when access is required.
 
-### Mathematical & Architectural Progression
+### SSH Authentication
 
-```
-+------------------------------------------------------------------------------------+
-|                               Course Progression                                   |
-+------------------------------------------------------------------------------------+
-|  Session 1 (Theoretical Foundation)             Session 2 (Implementation & Tools) |
-|  - Geometry & Calculus fundamentals             - Parametric Vector Graphics       |
-|  - Rates of change describing curves            - Hands-on Java 2D Graphics API    |
-|  - Theoretical graphical frameworks             - SSH keypair setup & Git workflow |
-+------------------------------------------------------------------------------------+
-```
+SSH uses **key-based authentication**.
 
-- **Calculus to Parametric Rendering:** Session 1 highlighted how curves and geometric boundaries are mathematically governed by rates of change. Session 2 translated this exact mathematical principle into vector graphics, where visual elements are rendered directly from parametric equations rather than pre-baked pixel grids.
-- **From Framework Concepts to Execution:** Session 1 introduced graphical framework abstractions in passing; Session 2 demanded hands-on invocation of the Java 2D API (`Graphics2D`), linking early theoretical models directly to executable code.
+Once an SSH key pair has been generated, the public key can be added to a Git hosting service. The corresponding private key remains securely stored on the user's computer.
 
----
+After configuration, SSH allows authenticated access without repeatedly entering a password or personal access token.
 
-## 6. Real-World Applications & Pragmatic Insights
+### SSH vs. HTTPS for Git
 
-- **Professional Developer Tooling:** The walkthrough of SSH demystified past setup steps from second-year projects. SSH keypairs are fundamental across modern software engineering—from authenticating git commits to establishing secure shell sessions into cloud instances (AWS EC2, digital infrastructure) and orchestrating automated CI/CD deployment pipelines.
-- **Design Workflows (Adobe Photoshop Dual-Engine Model):** 
-  - Imported digital photographs represent raw raster matrices; resizing them degrades quality as pixel data stretches.
-  - Native text layers and vector shape tools inside Photoshop preserve perfectly crisp vector paths regardless of canvas scaling.
-  - Recognizing that professional graphic software operates as a hybrid engine—simultaneously managing raster pixel arrays and vector parametric shapes—transforms how one approaches digital asset creation.
+| Feature | HTTPS | SSH |
+|---|---|---|
+| Authentication | Password/token-based | Key-based |
+| Initial setup | Generally simpler | Requires SSH key configuration |
+| Repeated authentication | May require credentials unless cached | Usually seamless after setup |
+| Private key required | No | Yes |
+| Common use | Repository cloning and pushing | Repository cloning and pushing |
 
 ---
 
-## 7. Key Takeaways
+## 4. Public and Private Keys
 
-1. **Asymmetric SSH Authentication:** Security rests on a complementary keypair—the public key acts as an open padlock distributed to remote services like GitHub, while the local private key serves as the exclusive key. Authentication occurs cryptographically without transmitting sensitive credentials over the network.
-2. **Structural Data Distinction:** The difference between raster and vector graphics is not an aesthetic choice, but a fundamental difference in memory architecture (pixel matrix vs. mathematical geometric equations).
-3. **Terminal Environments:** Shells like PowerShell offer object-oriented scripting and lower-level system control essential for serious development workflows, far beyond simple command prompts.
-4. **Interactivity Paradigm:** Static graphics are drawn once per frame lifecycle; interactive graphics continuously process user events to recompute visual frames dynamically.
-5. **Practical Convergence:** The initial Java 2D practice task bridges development infrastructure (SSH, Git, GitHub) directly with low-level visual rendering hooks.
+SSH authentication is based on a **key pair** consisting of:
+
+### Public Key
+
+The public key can be shared with trusted services, such as a Git hosting platform.
+
+Its purpose is to allow the service to verify that the connecting user possesses the corresponding private key.
+
+### Private Key
+
+The private key must remain confidential and securely stored on the user's machine.
+
+> **Never share your private SSH key.**
+
+### How the Key Pair Works
+
+The basic authentication process can be understood as:
+
+1. A user generates an SSH key pair.
+2. The **public key** is added to the relevant service.
+3. The **private key** remains on the user's computer.
+4. When the user connects, the service verifies the user's identity using the key pair.
+5. Authentication takes place without transmitting the private key or requiring the user to send a password.
+
+This makes SSH key-based authentication both practical and secure for development workflows.
 
 ---
 
+## 5. SSH KeyGen
 
+**SSH KeyGen** is a utility used to generate SSH key pairs.
+
+A typical key-generation workflow involves:
+
+1. Opening a terminal or command-line environment.
+2. Running the appropriate `ssh-keygen` command.
+3. Choosing where to store the generated key.
+4. Optionally protecting the private key with a passphrase.
+5. Adding the generated public key to the required service.
+
+The lecture demonstrated this process using **Microsoft PowerShell**, which is particularly useful for Windows users.
+
+### Microsoft PowerShell
+
+PowerShell provides a command-line environment in which SSH-related commands can be executed.
+
+Seeing SSH commands demonstrated directly in PowerShell helped connect the theoretical concepts of authentication and key pairs to a practical development workflow.
+
+---
+
+## 6. Static Graphics vs. Interactive Graphics
+
+The lecture then returned to computer graphics and introduced an important distinction between **static** and **interactive** graphics.
+
+### Static Graphics
+
+Static graphics are graphical elements or images that remain unchanged after they are displayed.
+
+**Examples:**
+
+- A photograph
+- A static diagram
+- A non-animated illustration
+- A rendered image that does not respond to user input
+
+### Interactive Graphics
+
+Interactive graphics respond dynamically to:
+
+- User input
+- Mouse movement
+- Keyboard input
+- Touch
+- Other system events
+
+The graphical output can change in real time based on the interaction.
+
+### Comparison
+
+| Static Graphics | Interactive Graphics |
+|---|---|
+| Remain unchanged after display | Respond to input or events |
+| No real-time user interaction | Supports real-time interaction |
+| Primarily presents visual information | Allows users to influence visual output |
+| Simpler interaction model | More dynamic system |
+
+This distinction provides an important bridge toward the broader goal of computer graphics, where interaction becomes an essential part of many graphical applications.
+
+---
+
+## 7. Vector Graphics vs. Raster Graphics
+
+The lecture concluded with a discussion of **vector graphics** and **raster graphics**.
+
+### Vector Graphics
+
+Vector graphics represent images mathematically using elements such as:
+
+- Paths
+- Lines
+- Curves
+- Geometric shapes
+
+Because the image is described mathematically rather than as a fixed grid of pixels, vector graphics can generally be scaled to different sizes without losing visual quality.
+
+**Examples:**
+
+- Logos
+- Icons
+- Diagrams
+- Mathematical illustrations
+
+### Raster Graphics
+
+Raster graphics are represented as a **grid of pixels**.
+
+Each pixel contains information that contributes to the final image.
+
+When a raster image is enlarged significantly, the individual pixels become more visible, which can result in a **pixelated or less sharp appearance**.
+
+**Examples:**
+
+- Photographs
+- Screenshots
+- Digital paintings
+- Pixel-based images
+
+### Vector vs. Raster
+
+| Vector Graphics | Raster Graphics |
+|---|---|
+| Mathematically represented | Pixel-based |
+| Uses paths, lines, and curves | Uses a grid of pixels |
+| Scales without significant quality loss | Can become pixelated when enlarged |
+| Well suited for logos and diagrams | Well suited for photographs and detailed images |
+| Resolution-independent | Resolution-dependent |
+
+---
+
+## 8. Connection to Previous Lectures
+
+The discussion of vector graphics connected naturally with concepts introduced in the previous lecture.
+
+Previously, **lines and curves** were identified as fundamental geometric primitives used to construct graphical objects. Vector graphics build upon this idea by representing graphical objects mathematically through paths, curves, and other geometric elements.
+
+This demonstrates how seemingly basic mathematical concepts can form the foundation of more advanced graphical systems.
+
+---
+
+## 9. Overall Understanding
+
+Today's lecture combined **practical software-development skills** with **computer graphics fundamentals**.
+
+The SSH section introduced an important development workflow involving:
+
+> **SSH → Key Pair → Authentication → Git Repository Access**
+
+Meanwhile, the graphics section expanded the conceptual foundation of the course through:
+
+> **Static Graphics → Interactive Graphics**
+
+and:
+
+> **Vector Graphics → Raster Graphics**
+
+Together, these topics demonstrate that modern computer graphics is not limited to drawing shapes or images. It also involves software tools, secure development practices, mathematical representations, system interaction, and user interaction.
+
+---
+
+# Key Takeaways
+
+1. **SSH and HTTPS are both secure communication protocols, but they serve different primary purposes.**
+   - SSH is mainly used for secure remote access and command execution.
+   - HTTPS is mainly used for secure web communication.
+
+2. **Git repositories can be accessed through both HTTPS and SSH.**
+   - HTTPS commonly relies on credentials or personal access tokens.
+   - SSH uses key-based authentication.
+
+3. **An SSH key pair consists of a public key and a private key.**
+   - The public key can be shared.
+   - The private key must remain secret and secure.
+
+4. **SSH KeyGen is used to generate SSH key pairs.**
+
+5. **Microsoft PowerShell provides a practical environment for running SSH commands on Windows.**
+
+6. **Static graphics remain unchanged after being displayed, while interactive graphics respond dynamically to user input or events.**
+
+7. **Vector graphics use mathematical representations such as paths, lines, and curves.**
+   - They can generally be scaled without losing quality.
+
+8. **Raster graphics are made up of pixels.**
+   - Enlarging them significantly can result in pixelation and loss of clarity.
+
+9. **Lines and curves are fundamental geometric primitives that form an important foundation for vector graphics and computer graphics in general.**
+
+10. **Modern computer graphics combines mathematical concepts, graphical representations, user interaction, and software-development practices.**
+
+---
+
+## Final Reflection
+
+The strongest takeaway from today's session is that computer graphics exists within a much broader technical ecosystem. Mathematical representations provide the foundation for creating graphical objects, interactive systems allow users to engage with those objects dynamically, and secure development practices such as SSH authentication support the software workflows through which graphical applications are built and maintained.
+
+Understanding these connections will provide a stronger foundation for the practical and interactive computer graphics concepts introduced in future lectures.
