@@ -8,7 +8,7 @@
 
 ## Repository Overview
 
-This repository serves as a learning journal and reflection hub for **CSC360: Computer Graphics and Interaction**. Rather than storing static lecture slides, this space tracks active engagement with core concepts, practical applications, and emerging technical insights gained throughout the course.
+This repository serves as a reflection journal and projects for **CSC360: Computer Graphics and Interaction**. Rather than storing static lecture slides, this space tracks active engagement with core concepts, practical applications, and emerging technical insights gained throughout the course.
 
 ---
 
