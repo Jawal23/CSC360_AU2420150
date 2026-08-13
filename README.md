@@ -27,7 +27,16 @@ In accordance with course guidelines, each entry synthesizes:
 
 | File | Lecture Topic | Date | Status |
 | :--- | :--- | :--- | :--- |
-| [Lecture1.md](file:///c:/Users/User/OneDrive/Documents/AU%20CSC360/CSC360_AU2420150/Session%20Reflections/Reflection_Session1.md) | Introduction Session | 4 August 2026 | Complete |
-| [Lecture2.md](file:///c:/Users/User/OneDrive/Documents/AU%20CSC360/CSC360_AU2420150/Session%20Reflections/Reflection_Session2.md) | Getting Started & Vector Graphics | 7 August 2026 | Complete |
+| [Lecture1.md](Session%20Reflections/Reflection_Session1.md) | Introduction Session | 4 August 2026 | Complete |
+| [Lecture2.md](Session%20Reflections/Reflection_Session2.md) | Getting Started & Vector Graphics | 7 August 2026 | Complete |
 | Lecture3.md | TBD | -- | In Progress |
+
+---
+
+## Projects & Source Code
+
+| File | Description | Status |
+| :--- | :--- | :--- |
+| [Projects/SimpleShapes.java](Projects/SimpleShapes.java) | Java Swing component drawing 2D shapes | Active |
+
 
