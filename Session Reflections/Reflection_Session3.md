@@ -8,7 +8,7 @@
 - **Course Name:** Computer Graphics and Image Processing
 - **Student ID:** AU2420150
 - **Session Number:** Session 03
-- **Session Date:** August 12, 2026
+- **Session Date:** August 13, 2026
 - **Entry Date:** August 21, 2026
 
 ---
