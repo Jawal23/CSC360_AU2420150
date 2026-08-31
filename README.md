@@ -32,6 +32,7 @@ In accordance with course guidelines, each entry synthesizes:
 | [Lecture3.md](Session%20Reflections/Reflection_Session3.md) | 2D Primitive Graphic (Blue Outline Square) | 13 August 2026 | Complete |
 | [Lecture4.md](Session%20Reflections/Reflection_Session4.md) | Lecture Session 4 (Absent) | 18 August 2026 | Absent |
 | [Lecture5.md](Session%20Reflections/Reflection_Session5.md) | Swing Architecture, OOP & Triangle Inequality Theorem | 20 August 2026 | Complete |
+| [Lecture6.md](Session%20Reflections/Reflection_Session6.md) | Graphics Complexity Roadmap, Maven, EDT Concurrency & JIT | 27 August 2026 | Complete |
 
 ---
 
